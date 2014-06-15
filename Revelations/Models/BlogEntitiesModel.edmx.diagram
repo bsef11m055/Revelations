@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="10c9c4d2b288406b82f46a0e895ddcf9" Name="Diagram1">
+        <EntityTypeShape EntityType="BlogDBModel.AudioPost" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDBModel.Comment" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDBModel.ImagePost" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDBModel.LinkPost" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDBModel.Post" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDBModel.QuotePost" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDBModel.StandardPost" Width="1.5" PointX="5.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDBModel.Tag" Width="1.5" PointX="1.125" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDBModel.User" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogDBModel.VideoPost" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
+        <AssociationConnector Association="BlogDBModel.FK_AudioPost_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogDBModel.FK_Comments_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogDBModel.FK_ImagePost_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogDBModel.FK_LinkPost_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogDBModel.FK_Post_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogDBModel.FK_QuotePost_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogDBModel.FK_StandardPost_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogDBModel.FK_VideoPost_Post" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
