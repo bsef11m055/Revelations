@@ -1,23 +1,55 @@
-﻿<!DOCTYPE html>
-<html lang="en-US">
-<head>
+﻿
     @{
         Layout = "~/Views/Shared/_Layout.cshtml";
     }
-    
-    <title>Obscura</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="style/css/ie8.css" media="all" />
-    <![endif]-->
-    <!--[if IE 9]>
-    <link rel="stylesheet" type="text/css" href="style/css/ie9.css" media="all" />
-    <![endif]-->
-    <script type="text/javascript">
-        $.backstretch("/Images/bg/1.jpg");
-    </script>
-</head>
-<body>
+    <div id="register" class="modal hide fade large" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="ui-icon-close">X</i>
+            </button>
+            <h3 id="modalLabel">Register</h3>
+        </div>
+        <div class="modal-body">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#signup" data-toggle="tab">Signup</a></li>
+                <li><a href="#login" data-toggle="tab">Login</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="signup">
+                    @model Revelations.Models.User
+                    <form method="post" action="/User/CreateUser">
+                        <div class="controls controls-row">
+                            @Html.TextBoxFor(x => x.FirstName, new { @class="span4 signup" , placeholder="First Name" })
+                            @Html.TextBoxFor(x => x.LastName, new { @class = "span4 signup", placeholder = "Last Name" })
+                            <select class="span2 signup" name="Gender">
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                        <div class="control-group controls">
+                            @Html.TextBoxFor(x => x.Username, new { @class = "span6 signup", placeholder = "Username" })
+                            <div id="message" class="span2"></div>
+                            @Html.TextBoxFor(x => x.Email, new { @class = "span6 signup", placeholder = "Email" })
+                            @Html.TextBoxFor(x => x.Password, new { @class="span6 signup" , placeholder="Password" , type="password"})
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-submit" data-dismiss="modal" aria-hidden="true" style="opacity: 1;">Cancel</button>
+                            <button class="btn btn-inverse " type="submit">Register</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane" id="login">...</div>
+            </div>
+        </div>
+    </div> 
+
+
+
+
+
+
     <div class="scanlines"></div>
     <!-- Begin Header -->
     <div class="header-wrapper opacity">
@@ -53,7 +85,12 @@
                                 <li><a href="columns.html">Columns</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li>
+                            <a id="signup-btn" href="#">Signup</a>
+                            <ul>
+                                <li><a id="login-btn" href="#">Login</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -214,7 +251,7 @@
                 <div class="widget widget_search">
                     <h3 class="widget-title">Search</h3>
                     <form class="searchform" method="get" action="#">
-                        <input type="text" name="s" value="type and hit enter" onfocus="this.value=''" onblur="this.value='type and hit enter'" />
+                        <input type="text" name="s" placeholder="type and hit enter" />
                     </form>
                 </div>
                 <div class="widget widget_archive">
@@ -290,6 +327,3 @@
         <div class="site-generator">Copyright Obscura 2012. Design by <a href="http://elemisfreebies.com">elemis</a>. All rights reserved.</div>
     </div>
     <!-- End Footer -->
-    <script type="text/javascript" src="/Scripts/scripts.js"></script>
-</body>
-</html>

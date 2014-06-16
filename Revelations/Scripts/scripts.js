@@ -132,12 +132,41 @@ jQuery(document).ready(function($) {
 		});
 	});
 
+
+
+
 /*-----------------------------------------------------------------------------------*/
-/*	MENU
+/*	BOOTSTRAP
 /*-----------------------------------------------------------------------------------*/
-ddsmoothmenu.init({
-	mainmenuid: "menu",
-	orientation: 'h',
-	classname: 'menu',
-	contentsource: "markup"
-})
+
+$(document).ready(function () {
+    $('#signup-btn').on('click', function () {
+        //remove active class from all links and buttons
+        $(".tab-pane").removeClass("active");
+        $(".tab-btn").removeClass("active");
+        $('#register').modal('show')
+        $('#signup').addClass('active');
+    });
+});
+
+$('#Username').blur(function () {
+    var username = $('#Username').val();
+    $.getJSON("/Home/CheckUsername?name=" + username, function (data) {
+        if (data) {
+            alert('Yes');
+        }
+        else {
+            $('#message').addClass('okay-box');
+            $('#message').text('All set');
+        }
+    });
+});
+    /*-----------------------------------------------------------------------------------*/
+    /*	MENU
+    /*-----------------------------------------------------------------------------------*/
+    ddsmoothmenu.init({
+        mainmenuid: "menu",
+        orientation: 'h',
+        classname: 'menu',
+        contentsource: "markup"
+    })

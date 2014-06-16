@@ -1,17 +1,26 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/template");
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
+    @Scripts.Render("~/bundles/template")
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="style/css/ie8.css" media="all" />
+    <![endif]-->
+    <!--[if IE 9]>
+    <link rel="stylesheet" type="text/css" href="style/css/ie9.css" media="all" />
+    <![endif]-->
+
+    <script type="text/javascript">
+        $.backstretch("/Images/bg/1.jpg");
+    </script>
 </head>
 <body>
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
 </body>
 </html>

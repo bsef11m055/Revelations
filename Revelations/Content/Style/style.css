@@ -142,7 +142,7 @@ textarea {
 }
 input:focus,
 textarea:focus {
-    background: rgba(0, 0, 0, 0.40)
+    background: rgba(0, 0, 0, 0.10)
 }
 p {
     margin-bottom: 20px
@@ -723,7 +723,9 @@ iframe {
 }
 .post .details,
 .post .details a {
-    color: #797979
+    color: #797979;
+    width: auto !important;
+    text-decoration: none;
 }
 .post .details a:hover {
     color: #86aca3
@@ -1522,4 +1524,31 @@ ul.flickr-feed li img {
     background: transparent url(/Images/line.png) repeat-x left top;
     margin: 0;
     padding: 15px 0 0 0;
+}
+
+input[name="s"]{
+    background-color:#161414;
+    border:none;
+    font-family: 'Open Sans', sans-serif;
+}
+.signup{
+    height:40px !important;
+    background-color:white;
+}
+
+.modal.large {
+    width: 60%; /* respsonsive width */
+    margin-left:-30%; /* width/2) */ 
+}
+
+#message{
+    float:right;
+    font-size:large;
+    padding-top: 10px;
+    margin-right: 150px;
+}
+
+.okay-box{
+    color:#86aca3;
+    font-size:14px;
 }

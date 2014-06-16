@@ -8,10 +8,21 @@ namespace Revelations
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+            // Clear all items from the default ignore list to allow minified CSS and JavaScript files to be included in debug mode
+            bundles.IgnoreList.Clear();
+
+
+            // Add back the default ignore list rules sans the ones which affect minified files and debug mode
+            bundles.IgnoreList.Ignore("*.intellisense.js");
+            bundles.IgnoreList.Ignore("*-vsdoc.js");
+            bundles.IgnoreList.Ignore("*.debug.js", OptimizationMode.WhenEnabled);
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/scripts.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/template").Include(
+                "~/Scripts/bootstrap.min.js",
+                "~/Scripts/jquery-1.7.2.min.js",
                 "~/Scripts/ddsmoothmenu.js",
                 "~/Scripts/retina.js",
                 "~/Scripts/selectnav.js",
@@ -36,6 +47,7 @@ namespace Revelations
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css",
+                        "~/Content/bootstrap.css",
                         "~/Content/Style/style.css",
                         "~/Content/Style/media-queries.css",
                         "~/Scripts/player/mediaelementplayer.css"));
