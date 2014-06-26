@@ -345,6 +345,7 @@
     <Content Include="Scripts\flashmediaelement.swf" />
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <None Include="Properties\PublishProfiles\bsef11m055.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
