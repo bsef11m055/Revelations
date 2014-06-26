@@ -150,6 +150,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,10 +175,10 @@
     <Compile Include="Models\Comment.cs">
       <DependentUpon>BlogEntitiesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HomeInputModel.cs" />
     <Compile Include="Models\ImagePost.cs">
       <DependentUpon>BlogEntitiesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\IUserRepository.cs" />
     <Compile Include="Models\LinkPost.cs">
       <DependentUpon>BlogEntitiesModel.tt</DependentUpon>
     </Compile>
@@ -196,6 +197,7 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>BlogEntitiesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Models\VideoPost.cs">
       <DependentUpon>BlogEntitiesModel.tt</DependentUpon>
     </Compile>
@@ -411,7 +413,9 @@
     <Content Include="Views\Shared\_BootstrapLayout.basic.cshtml" />
     <Content Include="Views\Shared\_alerts.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\User\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

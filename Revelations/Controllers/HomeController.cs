@@ -11,6 +11,7 @@ namespace Revelations.Controllers
     {
         //
         // GET: /Home/
+        
 
         public ActionResult Index()
         {
@@ -23,6 +24,14 @@ namespace Revelations.Controllers
             BlogDBEntities db = new BlogDBEntities();
 
             return this.Json(db.Users.ToList().Any(i => i.Username == Request["name"]),
+                JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public JsonResult CheckUsernamePass()
+        {
+            BlogDBEntities db = new BlogDBEntities();
+            string temp = Request["name"] + Request["pass"];
+            return this.Json(db.Users.ToList().Any(i => i.Username == Request["name"] && i.Password == Request["pass"]),
                 JsonRequestBehavior.AllowGet);
         }
     }

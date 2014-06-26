@@ -11,6 +11,7 @@ namespace Revelations.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class User
     {
@@ -20,10 +21,16 @@ namespace Revelations.Models
         }
     
         public int Id { get; set; }
+        [Required (ErrorMessage="Username is required")]
+        [StringLength(30,ErrorMessage="First Name is too large")]
         public string Username { get; set; }
+        [Required(ErrorMessage = "Password field was not filled")]
         public string Password { get; set; }
+        [DataType(DataType.EmailAddress , ErrorMessage = "Email is not valid")]
         public string Email { get; set; }
+        [Required(ErrorMessage = "Firstname is required")]
         public string FirstName { get; set; }
+        [Required(ErrorMessage = "Lastname is required")]
         public string LastName { get; set; }
         public string Gender { get; set; }
     

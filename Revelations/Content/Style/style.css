@@ -1537,8 +1537,8 @@ input[name="s"]{
 }
 
 .modal.large {
-    width: 60%; /* respsonsive width */
-    margin-left:-30%; /* width/2) */ 
+    width: 50%; /* respsonsive width */
+    margin-left:-25%; /* width/2) */ 
 }
 
 #message{
